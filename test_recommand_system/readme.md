@@ -6,7 +6,7 @@
 
 ## 웹 브라우저의 URL 입력칸에서 "127.0.0.1" 엔터를 치면 메인 페이지가 로딩됩니다.
 
-![메인1](./images/index.png.png)
+![메인1](./images/index.png)
 
 <br><br>
 
