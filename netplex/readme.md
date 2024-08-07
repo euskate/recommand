@@ -1,4 +1,4 @@
-<div style="font-size:48px;padding:24px;border:2px solid #333;width:800px;text-align:center;margin:50px auto">영화 추천 시스템 구축 및 평가</div>
+<div style="font-size:48px;padding:24px;border:2px solid #333;width:800px;text-align:center;margin:50px auto"><h1>영화 추천 시스템 구축 및 평가</h1></div>
 
 <br><br>
 
