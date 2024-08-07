@@ -169,7 +169,8 @@ def find_similar_users(user_id, pivot_table, cosine_sim_df, num_similar_users=3)
 
 ```python
 user_id = 2
-recommendations, recommendations_titles, avg_item_ratings, avg_rating, mse, rmse, performance = calculate_metrics(user_id, pivot_table, cosine_sim_df, items_df)
+recommendations, recommendations_titles, avg_item_ratings, 
+avg_rating, mse, rmse, performance = calculate_metrics(user_id, pivot_table, cosine_sim_df, items_df)
 print(f"User {user_id} 추천 아이템: {recommendations_titles}")
 print(f"추천 아이템 및 평점: {list(zip(recommendations, avg_item_ratings))}")
 print(f"추천 아이템의 평균 평점: {avg_rating:.2f}")
