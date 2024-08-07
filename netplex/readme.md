@@ -363,12 +363,16 @@ else:
 ```console
 .venv\Scripts\python.exe D:\kim2\python\pythonProject1\netflix_recommand_confirm_real.py 
 추천을 받을 사용자 ID를 입력하세요 [1-943]: 2
-User 2 추천 아이템: ['They Made Me a Criminal (1939)', 'Death in Brunswick (1991)', 'Mamma Roma (1962)', 'All Things Fair (1996)', 'Shadows (Cienie) (1988)']
+User 2 추천 아이템: ['They Made Me a Criminal (1939)', 'Death in Brunswick (1991)', 'Mamma Roma (1962)',
+ 'All Things Fair (1996)', 'Shadows (Cienie) (1988)']
+
 추천 아이템 및 평점: [(1122, 5.0), (1593, 4.0), (1674, 4.0), (1619, 3.0), (1546, 1.0)]
 추천 아이템의 평균 평점: 3.40
+
 MSE: 0.0000
 RMSE: 0.0000
 모델 성능: 매우 우수
+
 유사한 사용자 및 코사인 유사도:
   User 701: 0.5806
   User 931: 0.5125
