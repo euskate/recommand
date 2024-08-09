@@ -61,13 +61,13 @@ MovieLens 100K 데이터셋은 영화 추천 시스템을 위한 기본적인 �
 
 - `u.item`: 영화 ID와 제목 정보를 포함
 
-![u.item 파일](./images/netflex02.png)
+![u.item 파일](./images/netflex03.png)
 
 <br>
 
 - `u.data`: 사용자 ID, 영화 ID, 평점, 타임스탬프 정보를 포함
 
-![u.data 파일](./images/netflex03.png)
+![u.data 파일](./images/netflex02.png)
 
 <br>
 
