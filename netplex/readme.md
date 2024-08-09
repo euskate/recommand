@@ -53,8 +53,23 @@
 
 MovieLens 100K 데이터셋은 영화 추천 시스템을 위한 기본적인 데이터셋으로, 사용자와 영화 간의 평점 정보를 포함하고 있습니다. 데이터는 다음 두 개의 파일로 구성됩니다:
 
-- `u.data`: 사용자 ID, 영화 ID, 평점, 타임스탬프 정보를 포함
+- `u.user`: 사용자 ID, 성별 등 사용자에 대한 정보를 포함
+
+![u.user 파일](./images/netflex01.png)
+
+<br>
+
 - `u.item`: 영화 ID와 제목 정보를 포함
+
+![u.item 파일](./images/netflex02.png)
+
+<br>
+
+- `u.data`: 사용자 ID, 영화 ID, 평점, 타임스탬프 정보를 포함
+
+![u.data 파일](./images/netflex03.png)
+
+<br>
 
 이 데이터셋을 Pandas DataFrame으로 로드하고 필요한 전처리를 진행합니다.
 
@@ -88,6 +103,9 @@ items_df = pd.read_csv(item_file_path, sep='|', header=None, encoding='ISO-8859-
 pivot_table = df.pivot_table(index='UserID', columns='ItemID', values='Rating', fill_value=0)
 ```
 
+![피벗테이블](./images/netflex04.png)
+
+
 <br><br>
 
 ## 코사인 유사도 계산
@@ -101,6 +119,8 @@ cosine_sim_matrix = cosine_similarity(pivot_table.T)
 # 코사인 유사도 행렬을 데이터프레임으로 변환
 cosine_sim_df = pd.DataFrame(cosine_sim_matrix, index=pivot_table.columns, columns=pivot_table.columns)
 ```
+
+![코사인유사도계산](./images/nextflix05.png)
 
 <br><br><br><br>
 
@@ -159,6 +179,8 @@ def find_similar_users(user_id, pivot_table, cosine_sim_df, num_similar_users=3)
     return top_similar_users
 ```
 
+![유사한사용자찾기](./images/nextflix06.png)
+
 <br><br><br><br>
 
 # 결과 분석
@@ -179,6 +201,13 @@ print(f"RMSE: {rmse:.4f}")
 print(f"모델 성능: {performance}")
 ```
 
+```console
+추천을 받을 사용자 ID를 입력하세요 [1-943]: １
+User 1 추천 아이템: ['Cyclo (1995)', 'Office Killer (1997)', 'Little City (1998)', 'Death in Brunswick (1991)', 'Mamma Roma (1962)']
+추천 아이템 및 평점: [(1156, 3.0), (1601, 1.0), (1656, 3.5), (1593, 4.0), (1674, 4.0)]
+추천 아이템의 평균 평점: 3.10
+```
+
 <br><br>
 
 ## 유사한 사용자 분석
@@ -191,6 +220,23 @@ print("유사한 사용자 및 코사인 유사도:")
 for similar_user_id, sim_score in similar_users_info:
     print(f"  User {similar_user_id}: {sim_score:.4f}")
 ```
+
+```console
+유사한 사용자 및 코사인 유사도:
+  User 916: 0.5691
+  User 864: 0.5475
+  User 268: 0.5421
+추천된 아이템별 유사한 사용자 및 평점:
+Item 1156 (Cyclo (1995)):
+  User 851: 0.4887
+Item 1601 (Office Killer (1997)):
+Item 1656 (Little City (1998)):
+Item 1593 (Death in Brunswick (1991)):
+Item 1674 (Mamma Roma (1962)):
+  User 884: 0.5077
+```
+
+![최종결과](./images/netflex07.png)
 
 <br><br><br><br>
 
