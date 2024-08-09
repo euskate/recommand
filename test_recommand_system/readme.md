@@ -1,3 +1,11 @@
+<br><br><br><br><br><br>
+
+<h1>AI융합교육평가</h1>
+<h1>김기태</h1>
+<h1>2351034001</h1>
+
+<br><br><br><br><br><br>
+
 # 1. 원본 데이터
 
 ## 1-1. test_scores.csv 파일
